@@ -84,7 +84,7 @@ const questions: Question[] = [
                 ]
             },
             {
-                question: "What does the <a> tag do in HTML?",
+                question: "What does the anchor tag do in HTML?",
                 answers: [
                     {text: "Defines a paragraph", correct: false},
                     {text: "Defines a hyperlink", correct: true},
@@ -102,7 +102,7 @@ const questions: Question[] = [
                 ]
             },
             {
-                question: "In HTML, what does the <br> tag represent?",
+                question: "In HTML, what does the br tag represent?",
                 answers: [
                     {text: "Breaks the current line and continues on the next line", correct: true},
                     {text: "Defines a bold text", correct: false},
@@ -127,7 +127,26 @@ const questions: Question[] = [
                     {text: "Creative Style Sheets", correct: false},
                     {text: "Cascading Style Sheets", correct: true}
                 ]
-            }
+            },
+            {
+                question: "Which is used to create Web Pages ?",
+                answers: [
+                    {text: "C++", correct: false},
+                    {text: "Java", correct: false},
+                    {text: "JVM", correct: false},
+                    {text: "HTML", correct: true}
+                ]
+            },
+            {
+                question: "Who is the founder of Html?",
+                answers: [
+                    {text: "Yeans", correct: false},
+                    {text: "Google", correct: false},
+                    {text: "Maxwell", correct: false},
+                    {text: "Timer Berns", correct: true}
+                ]
+            },
+            
         ];
 
 
