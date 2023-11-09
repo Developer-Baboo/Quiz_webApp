@@ -1,5 +1,6 @@
 // Login(index.html file) Code start here
-const users: { email: string, password: string }[] = [
+try {
+    const users: { email: string, password: string }[] = [
     { email: "user1@example.com", password: "password1" },
     { email: "user2@example.com", password: "password2" },
     { email: "user3@example.com", password: "password3" },
@@ -26,6 +27,11 @@ loginForm.addEventListener("submit", function(event) {
 });
 // Login(index.html file) code end here
 
+}
+catch(error)
+{
+    console.log(error);
+}
 //instructions
 const startButton = document.getElementById("startButton");
 if (startButton) {
