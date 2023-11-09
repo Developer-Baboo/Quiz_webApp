@@ -1,3 +1,40 @@
+// Login(index.html file) Code start here
+const users: { email: string, password: string }[] = [
+    { email: "user1@example.com", password: "password1" },
+    { email: "user2@example.com", password: "password2" },
+    { email: "user3@example.com", password: "password3" },
+    { email: "user4@example.com", password: "password4" }
+];
+
+const loginForm = document.getElementById("loginForm") as HTMLFormElement;
+
+loginForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById("email") as HTMLInputElement;
+    const passwordInput = document.getElementById("password") as HTMLInputElement;
+    const email = emailInput.value;
+    const password = passwordInput.value;
+
+    const user = users.find(u => u.email === email && u.password === password);
+
+    if (user) {
+        alert("Login successful!");
+        window.location.href = "instructions.html";
+    } else {
+        alert("Invalid email or password. Please try again.");
+    }
+});
+// Login(index.html file) code end here
+
+//instructions
+const startButton = document.getElementById("startButton");
+if (startButton) {
+    startButton.addEventListener("click", () => {
+        window.location.href = "quiz.html"; // Navigate to quiz.html when Start Quiz button is pressed
+    });
+}
+// instructions
+
 // Interface defining the structure of an answer
 interface Answer {
     text: string;

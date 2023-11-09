@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Quiz Web Applications</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .quiz-container {
+            text-align: center;
+        }
+
+        .quiz-instructions {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-instructions:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px 0px #ccc;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-instructions">
+            <h1>Instructions</h1>
+            <p>Total Questions: 10</p>
+            <p>Every question carries 1 mark</p>
+            <p>No negative marking</p>
+            <p>Make sure you have a good internet connection</p>
+            <p>Once selected, you can't change your answer</p>
+            <button id="startButton">Start Quiz</button>
+        </div>
+    </div>
+    <!-- <script src="main.js"></script> -->
+    <script src="main.js" ></script>
+</body>
+</html>

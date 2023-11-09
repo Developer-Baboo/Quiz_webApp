@@ -2,283 +2,93 @@
 <html lang="en">
 
 <head>
-    <title>TypeScript Quiz Applications</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
     <style>
-        * {
+            body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0px;
-            font-family: 'Poppins', 'sans-serif';
-            box-sizing: border-box;
+            background-color: #f5f5f5;
         }
 
-        body {
-            background-color: #5d90e2;
-        }
-
-        .app {
-            background: #fff;
-            width: 90%;
-            max-width: 600px;
-            margin: 100px auto 0;
+        .login-container {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
             border-radius: 10px;
-            padding: 30px;
+            box-shadow: 0px 0px 10px 0px #ccc;
+            background-color: #fff;
+            transition: all 0.3s ease;
         }
 
-        .app h1 {
-            font-size: 25px;
-            color: #001e4d;
-            font-weight: 600;
-            border-bottom: 1px solid #333;
-            padding-bottom: 30px;
+        .login-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px 0px #ccc;
         }
 
-        .quiz {
-            padding: 20px 0;
+        form {
+            margin-top: 20px;
         }
 
-        .quiz h2 {
-            font-size: 18px;
-            color: #001e4d;
-            font-weight: 600;
-        }
-
-        .btn {
-            background: #fff;
-            color: blue;
-            font-weight: 500;
-            width: 100%;
-            border: 1px solid #222;
+        input, button {
+            margin-bottom: 10px;
             padding: 10px;
-            margin: 10px 0;
-            text-align: left;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            transition: all 0.3s ease;
         }
 
-        .btn:hover:not([disabled]) {
-            background: #222;
+        input:focus, button:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0px 0px 5px 0px #4CAF50;
+        }
+
+        button {
+            background-color: #4CAF50;
             color: #fff;
-        }
-
-        .btn:disabled{
-            cursor: no-drop;
-        }
-
-        #next-btn {
-            background: #004d1a;
-            color: #fff;
-            font-weight: 500;
-            width: 150px;
-            border: 0;
-            padding: 10px;
-            margin: 20px auto 0;
-            border-radius: 4px;
             cursor: pointer;
-            display: none;
+            transition: all 0.3s ease;
         }
-        .correct{
-            background: #9aeabc;
+
+        button:hover {
+            background-color: #45a049;
         }
-        .incorrect{
-            background: #ff9393;
+
+        button:active {
+            background-color: #3e8e41;
         }
+
     </style>
 </head>
 
 <body>
-    <div class="app">
-        <center><h1>Simple Typescript Quiz</h1></center>
-        <div class="quiz">
-            <h2 id="question">Question Goes Here</h2>
-            <div id="answer-buttons">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-            </div>
-
-            <button id="next-btn">Next</button>
-
-        </div>
+    <div class="login-container">
+        <fieldset>
+            <legend>Login</legend>
+            <form id="loginForm">
+                <table>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" id="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="password" id="password" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><button type="submit">Login</button></td>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
     </div>
-    <script src="main.js"></script>
+<script src="main.js" ></script>
 </body>
-<!-- <script>
-    const questions = [
-            {
-                question: "What does HTML stand for?",
-                answers: [
-                    {text: "Hyperlink Text Markup Language", correct: false},
-                    {text: "Hyper Transfer Markup Language", correct: false},
-                    {text: "Hyper Text Markup Language", correct: true},
-                    {text: "Hyperlink Transfer Markup Language", correct: false}
-                ]
-            },
-            {
-                question: "Which tag is used for creating an unordered list in HTML?",
-                answers: [
-                    {text: "<ol>", correct: false},
-                    {text: "<ul>", correct: true},
-                    {text: "<li>", correct: false},
-                    {text: "<dl>", correct: false}
-                ]
-            },
-            {
-                question: "What is the correct HTML element for the largest heading?",
-                answers: [
-                    {text: "<h6>", correct: false},
-                    {text: "<heading>", correct: false},
-                    {text: "<h1>", correct: true},
-                    {text: "<head>", correct: false}
-                ]
-            },
-            {
-                question: "Which attribute is used to define inline styles in HTML?",
-                answers: [
-                    {text: "class", correct: false},
-                    {text: "styles", correct: false},
-                    {text: "css", correct: false},
-                    {text: "style", correct: true}
-                ]
-            },
-            {
-                question: "What does the <a> tag do in HTML?",
-                answers: [
-                    {text: "Defines a paragraph", correct: false},
-                    {text: "Defines a hyperlink", correct: true},
-                    {text: "Defines a line break", correct: false},
-                    {text: "Defines an image", correct: false}
-                ]
-            },
-            {
-                question: "Which tag is used for creating a table in HTML?",
-                answers: [
-                    {text: "<table>", correct: true},
-                    {text: "<tr>", correct: false},
-                    {text: "<td>", correct: false},
-                    {text: "<th>", correct: false}
-                ]
-            },
-            {
-                question: "In HTML, what does the <br> tag represent?",
-                answers: [
-                    {text: "Breaks the current line and continues on the next line", correct: true},
-                    {text: "Defines a bold text", correct: false},
-                    {text: "Defines a block of code", correct: false},
-                    {text: "Defines a bullet point", correct: false}
-                ]
-            },
-            
-            {
-                question: "Which HTML element is used to define important text?",
-                answers: [
-                    {text: "<strong>", correct: true},
-                    {text: "<em>", correct: false},
-                    {text: "<bold>", correct: false},
-                    {text: "<important>", correct: false}
-                ]
-            },
-            {
-                question: "What does CSS stand for?",
-                answers: [
-                    {text: "Computer Style Sheets", correct: false},
-                    {text: "Colorful Style Sheets", correct: false},
-                    {text: "Creative Style Sheets", correct: false},
-                    {text: "Cascading Style Sheets", correct: true}
-                ]
-            }
-        ];
-
-
-
-    const questionElement = document.getElementById("question");
-    const answerButtons = document.getElementById("answer-buttons");
-    const nextButton = document.getElementById("next-btn");
-
-    let currentQuestionIndex = 0;
-    let score = 0;
-
-    function startQuiz(){
-        currentQuestionIndex= 0;
-        score = 0;
-        nextButton.innerHTML = "Next";
-        showQuestion();
-    }
-
-    function showQuestion(){
-        resetState();
-        let currentQuestion = questions[currentQuestionIndex];
-        let questionNo = currentQuestionIndex+1;
-        questionElement.innerHTML = questionNo + " " + currentQuestion + " " + currentQuestion.question;
-
-        currentQuestion.answers.forEach(answer => {
-            const button = document.createElement("button");
-            button.innerHTML= answer.text;
-            button.classList.add("btn");
-            answerButtons.appendChild(button);
-
-
-            if(answer.correct){
-                button.dataset.correct = answer.correct;
-            }
-            button.addEventListener("click", selectAnswer);
-
-        });
-    }
-
-    
-    function resetState() {
-        nextButton.style.display = "none";
-        while(answerButtons.firstChild){
-            answerButtons.removeChild(answerButtons.firstChild);
-        }
-    }
-
-    function selectAnswer(e){
-        const selectedBtn = e.target;
-        const isCorrect = selectedBtn.dataset.correct === "true";
-        if(isCorrect){
-            selectedBtn.classList.add("correct");
-            score++;
-        }else{
-            selectedBtn.classList.add("incorrect");
-        }
-
-        Array.from(answerButtons.children).forEach(button =>{
-            if(button.dataset.correct === "true"){
-                button.classList.add("correct");
-            }
-            button.disabled = true;
-        });
-        nextButton.style.display = "block";
-    }
-
-    function showScore(){
-        resetState();
-        questionElement.innerHTML = `You scored ${score} out of ${questions.length} !`;
-        nextButton.innerHTML = "Play Again";
-        nextButton.style.display = "block";
-    }
-
-    function handleNextButton(){
-        currentQuestionIndex++;
-        if(currentQuestionIndex < questions.length ){
-            showQuestion();
-        }else{
-            showScore();
-        }
-    }
-
-    nextButton.addEventListener("click", ()=>{
-        if(currentQuestionIndex < questions.length ){
-            handleNextButton();
-        }else{
-            startQuiz();
-        }
-    })
-    startQuiz();
-
-</script> -->
 
 </html>
